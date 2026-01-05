@@ -1,0 +1,298 @@
+/* ==========================================================================
+   About Page Styles - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Story section */
+.story {
+  background-color: var(--color-white);
+}
+
+.story__content {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .story__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.story__image {
+  position: relative;
+}
+
+.story__image img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Decorative accent */
+.story__image::before {
+  content: '';
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-6);
+  right: calc(var(--space-6) * -1);
+  bottom: calc(var(--space-6) * -1);
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-xl);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.story__text {
+  max-width: 540px;
+}
+
+.story__text p {
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Values section */
+.values {
+  background-color: var(--color-background);
+}
+
+.values__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.value-card {
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.value-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-4);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+}
+
+.value-card__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.value-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.value-card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+}
+
+/* Team section */
+.team {
+  background-color: var(--color-white);
+}
+
+.team__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Certifications section */
+.certifications {
+  background-color: var(--color-gray-50);
+}
+
+.certifications__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .certifications__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .certifications__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.certification-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.certification-card__image {
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-4);
+  object-fit: contain;
+}
+
+.certification-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.certification-card__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Timeline section (company history) */
+.timeline {
+  background-color: var(--color-white);
+}
+
+.timeline__list {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: var(--space-8);
+}
+
+.timeline__list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-8);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-8) * -1 - 6px);
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-accent);
+  border: 3px solid var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+.timeline__year {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.timeline__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.timeline__text {
+  color: var(--color-text-light);
+}
+
+/* Community section */
+.community {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.community__content {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .community__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+.community__text h2 {
+  color: var(--color-white);
+}
+
+.community__text p {
+  color: var(--color-gray-300);
+}
+
+.community__images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.community__images img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}

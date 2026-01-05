@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Testimonials - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Testimonials section */
+.testimonials {
+  background-color: var(--color-gray-50);
+}
+
+/* Testimonials grid */
+.testimonials__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Testimonial card */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Quote icon */
+.testimonial-card__quote {
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--space-4);
+  color: var(--color-secondary);
+}
+
+/* Stars */
+.testimonial-card__stars {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-4);
+}
+
+.testimonial-card__star {
+  width: 20px;
+  height: 20px;
+  color: var(--color-secondary);
+}
+
+.testimonial-card__star--empty {
+  color: var(--color-gray-300);
+}
+
+/* Text */
+.testimonial-card__text {
+  flex-grow: 1;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+/* Author */
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  background-color: var(--color-gray-200);
+}
+
+.testimonial-card__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+}
+
+.testimonial-card__info {
+  flex: 1;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.testimonial-card__location {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Google/Yelp badge */
+.testimonial-card__source {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.testimonial-card__source-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Featured testimonial (larger) */
+.testimonial-card--featured {
+  padding: var(--space-8);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: var(--color-white);
+}
+
+.testimonial-card--featured .testimonial-card__quote {
+  color: var(--color-secondary);
+}
+
+.testimonial-card--featured .testimonial-card__text {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-200);
+}
+
+.testimonial-card--featured .testimonial-card__author {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-card--featured .testimonial-card__name {
+  color: var(--color-white);
+}
+
+.testimonial-card--featured .testimonial-card__location {
+  color: var(--color-gray-300);
+}
+
+/* Testimonials carousel (if using slider) */
+.testimonials__carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials__track {
+  display: flex;
+  gap: var(--space-6);
+  transition: transform var(--transition-slow);
+}
+
+.testimonials__slide {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+  .testimonials__slide {
+    flex: 0 0 calc(50% - var(--space-3));
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials__slide {
+    flex: 0 0 calc(33.333% - var(--space-4));
+  }
+}
+
+/* Carousel controls */
+.testimonials__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.testimonials__control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.testimonials__control:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.testimonials__control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.testimonials__control svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Carousel dots */
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.testimonials__dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-gray-300);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.testimonials__dot:hover {
+  background-color: var(--color-gray-400);
+}
+
+.testimonials__dot--active {
+  width: 30px;
+  background-color: var(--color-accent);
+}
+
+/* Rating summary */
+.rating-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.rating-summary__score {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.rating-summary__stars {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.rating-summary__count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

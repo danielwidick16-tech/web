@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Services Page Styles - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Service navigation (anchor links) */
+.service-nav {
+  position: sticky;
+  top: 50px; /* Below fixed header: logo height */
+  z-index: calc(var(--z-sticky) - 1);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .service-nav {
+    top: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-nav {
+    top: 72px;
+  }
+}
+
+.service-nav__list {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  min-width: max-content;
+}
+
+@media (min-width: 768px) {
+  .service-nav__list {
+    justify-content: center;
+  }
+}
+
+.service-nav__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.service-nav__link:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-primary);
+}
+
+.service-nav__link--active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.service-nav__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Service detail sections */
+.service-detail {
+  scroll-margin-top: 160px;
+}
+
+@media (min-width: 768px) {
+  .service-detail {
+    scroll-margin-top: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-detail {
+    scroll-margin-top: 230px;
+  }
+}
+
+.service-detail:nth-child(even) {
+  background-color: var(--color-gray-50);
+}
+
+.service-detail__content {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .service-detail__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .service-detail:nth-child(even) .service-detail__content {
+    direction: rtl;
+  }
+
+  .service-detail:nth-child(even) .service-detail__content > * {
+    direction: ltr;
+  }
+}
+
+.service-detail__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-detail__info {
+  max-width: 540px;
+}
+
+.service-detail__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--space-4);
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+}
+
+.service-detail__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.service-detail__title {
+  margin-bottom: var(--space-4);
+}
+
+.service-detail__description {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+/* Service items list */
+.service-detail__list {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.service-detail__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.service-detail__item-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-success);
+  margin-top: 2px;
+}
+
+.service-detail__item-text {
+  color: var(--color-text);
+}
+
+/* Pricing preview (optional) */
+.service-detail__pricing {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+}
+
+.service-detail:nth-child(even) .service-detail__pricing {
+  background-color: var(--color-white);
+}
+
+.service-detail__price-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.service-detail__price {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* All services grid (alternative layout) */
+.all-services {
+  background-color: var(--color-background);
+}
+
+.all-services__grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .all-services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .all-services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.all-services__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.all-services__item:hover {
+  background-color: var(--color-gray-50);
+  transform: translateX(4px);
+}
+
+.all-services__item-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.all-services__item-text {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* Brands section */
+.brands {
+  background-color: var(--color-white);
+}
+
+.brands__title {
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+.brands__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.brands__logo {
+  max-width: 120px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all var(--transition-base);
+}
+
+.brands__logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}

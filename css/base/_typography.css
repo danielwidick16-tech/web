@@ -1,0 +1,246 @@
+/* ==========================================================================
+   Typography - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Google Fonts are loaded in HTML head */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-5);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-4);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-2);
+}
+
+/* Responsive typography */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--font-size-6xl);
+  }
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: var(--space-4);
+  max-width: 70ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lead text */
+.lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+}
+
+@media (min-width: 768px) {
+  .lead {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+/* Text links with underline */
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose li {
+  margin-bottom: var(--space-2);
+}
+
+.prose li::marker {
+  color: var(--color-secondary);
+}
+
+/* Small text */
+small,
+.text-small {
+  font-size: var(--font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+/* Text alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Font weights */
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Uppercase text */
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Section titles */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-light);
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto var(--space-12);
+}
+
+/* Decorative underline for headings */
+.title-decorated {
+  position: relative;
+  display: inline-block;
+  padding-bottom: var(--space-4);
+}
+
+.title-decorated::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+  border-radius: var(--radius-full);
+}

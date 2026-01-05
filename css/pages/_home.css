@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Homepage Styles - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Trust badges section */
+.trust-badges {
+  padding: var(--space-8) 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.trust-badges__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .trust-badges__grid {
+    gap: var(--space-10);
+  }
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light);
+}
+
+.trust-badge__icon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-success);
+}
+
+/* Services overview section */
+.services-overview {
+  background-color: var(--color-background);
+}
+
+.services-overview__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 480px) {
+  .services-overview__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-overview__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Why choose us section */
+.why-choose {
+  background-color: var(--color-white);
+}
+
+.why-choose__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .why-choose__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .why-choose__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Service area section */
+.service-area {
+  background-color: var(--color-background);
+}
+
+.service-area__content {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .service-area__content {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.service-area__map {
+  position: relative;
+  aspect-ratio: 16/12;
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 350px;
+}
+
+@media (min-width: 768px) {
+  .service-area__map {
+    min-height: 400px;
+  }
+}
+
+.service-area__map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Leaflet map customizations */
+#service-map {
+  border-radius: var(--radius-xl);
+}
+
+.custom-map-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.leaflet-popup-content strong {
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+}
+
+.leaflet-popup-content a {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
+/* Map markers */
+.service-area__marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-accent);
+  border: 3px solid var(--color-white);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-lg);
+  transform: translate(-50%, -50%);
+}
+
+/* Positioned markers for Central Oregon map */
+.service-area__marker--bend { top: 45%; left: 40%; }
+.service-area__marker--redmond { top: 35%; left: 45%; }
+.service-area__marker--sisters { top: 38%; left: 30%; }
+.service-area__marker--sunriver { top: 55%; left: 38%; }
+.service-area__marker--lapine { top: 65%; left: 35%; }
+.service-area__marker--prineville { top: 30%; left: 60%; }
+.service-area__marker--madras { top: 20%; left: 50%; }
+
+.service-area__info {
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .service-area__info {
+    text-align: left;
+  }
+}
+
+.service-area__title {
+  margin-bottom: var(--space-4);
+}
+
+.service-area__description {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-6);
+}
+
+/* Cities list */
+.service-area__cities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .service-area__cities {
+    justify-content: flex-start;
+  }
+}
+
+.service-area__city {
+  display: inline-flex;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ZIP validator in service area */
+.service-area__validator {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .service-area__validator {
+    margin: 0;
+  }
+}
+
+/* Scheduling CTA section */
+.cta-schedule {
+  position: relative;
+  background-color: var(--color-primary);
+  overflow: hidden;
+}
+
+.cta-schedule__pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/images/backgrounds/topographic-pattern.svg');
+  background-repeat: repeat;
+  background-size: 400px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.cta-schedule__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-schedule__title {
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.cta-schedule__text {
+  color: var(--color-gray-300);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-8);
+}
+
+.cta-schedule__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .cta-schedule__actions {
+    flex-direction: row;
+  }
+}
+
+/* Stats section (optional) */
+.stats {
+  padding: var(--space-10) 0;
+  background-color: var(--color-white);
+}
+
+.stats__grid {
+  display: grid;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat {
+  padding: var(--space-4);
+}
+
+.stat__number {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat__label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+}

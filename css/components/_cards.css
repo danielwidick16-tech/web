@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Cards - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Base card */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: var(--space-6);
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.card__text {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-4);
+}
+
+.card__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Service card */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.service-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-5);
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+  border-radius: var(--radius-xl);
+  color: var(--color-white);
+}
+
+.service-card__icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.service-card__description {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-5);
+  flex-grow: 1;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.service-card__link:hover {
+  gap: var(--space-3);
+}
+
+.service-card__link svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast);
+}
+
+.service-card__link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Feature card (Why Choose Us) */
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+}
+
+.feature-card__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.feature-card__content {
+  flex: 1;
+}
+
+.feature-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.feature-card__text {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+}
+
+/* Team card */
+.team-card {
+  text-align: center;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-card__image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.team-card__body {
+  padding: var(--space-5);
+}
+
+.team-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.team-card__role {
+  color: var(--color-secondary-dark);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Service detail card (for services page) */
+.service-detail-card {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+  .service-detail-card {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8);
+  }
+
+  .service-detail-card--reverse {
+    direction: rtl;
+  }
+
+  .service-detail-card--reverse > * {
+    direction: ltr;
+  }
+}
+
+.service-detail-card__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.service-detail-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-detail-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.service-detail-card__list {
+  list-style: none;
+  margin-bottom: var(--space-6);
+}
+
+.service-detail-card__list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  color: var(--color-text-light);
+}
+
+.service-detail-card__list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Certification card */
+.cert-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
+}
+
+.cert-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.cert-card__image {
+  max-width: 120px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: filter var(--transition-base), opacity var(--transition-base);
+}
+
+.cert-card:hover .cert-card__image {
+  filter: grayscale(0%);
+  opacity: 1;
+}

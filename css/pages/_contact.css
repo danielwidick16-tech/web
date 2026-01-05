@@ -1,0 +1,288 @@
+/* ==========================================================================
+   Contact Page Styles - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Contact content section */
+.contact-content {
+  background-color: var(--color-background);
+}
+
+.contact-content__grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .contact-content__grid {
+    grid-template-columns: 1fr 400px;
+    gap: var(--space-12);
+  }
+}
+
+/* Contact info sidebar */
+.contact-info {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .contact-info {
+    order: 1;
+  }
+}
+
+.contact-info__card {
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-info__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+.contact-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.contact-info__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+}
+
+.contact-info__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-info__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.contact-info__value {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.contact-info__link {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-info__link:hover {
+  color: var(--color-accent);
+}
+
+/* Business hours */
+.contact-hours {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.contact-hours__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.contact-hours__list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-hours__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.contact-hours__day {
+  color: var(--color-text-light);
+}
+
+.contact-hours__time {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.contact-hours__emergency {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-md);
+}
+
+.contact-hours__emergency svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Contact form area */
+.contact-form-area {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .contact-form-area {
+    order: 2;
+  }
+}
+
+/* Map section */
+.contact-map {
+  height: 400px;
+  margin-top: var(--space-8);
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Quick contact cards */
+.quick-contact {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 480px) {
+  .quick-contact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .quick-contact {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.quick-contact__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.quick-contact__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.quick-contact__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--space-4);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+}
+
+.quick-contact__card--phone .quick-contact__icon {
+  background-color: var(--color-success);
+}
+
+.quick-contact__card--email .quick-contact__icon {
+  background-color: var(--color-secondary);
+}
+
+.quick-contact__card--schedule .quick-contact__icon {
+  background-color: var(--color-accent);
+}
+
+.quick-contact__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.quick-contact__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+
+.quick-contact__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Form success page styling */
+.form-success {
+  text-align: center;
+  padding: var(--space-12) 0;
+}
+
+.form-success__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-6);
+  background-color: var(--color-success);
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+}
+
+.form-success__icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.form-success__title {
+  margin-bottom: var(--space-4);
+}
+
+.form-success__text {
+  color: var(--color-text-light);
+  max-width: 480px;
+  margin: 0 auto var(--space-8);
+}

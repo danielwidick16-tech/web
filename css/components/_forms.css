@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Forms - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Form container */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Form group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Label */
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: var(--color-accent);
+}
+
+/* Base input styles */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:hover,
+.form-select:hover,
+.form-textarea:hover {
+  border-color: var(--color-gray-400);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(232, 90, 51, 0.15);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Input sizes */
+.form-input--sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.form-input--lg {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-lg);
+}
+
+/* Select dropdown */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232D3E50' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  background-size: 20px;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Checkbox and Radio */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.form-check-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Input states */
+.form-input--error,
+.form-select--error,
+.form-textarea--error {
+  border-color: var(--color-error);
+}
+
+.form-input--error:focus,
+.form-select--error:focus,
+.form-textarea--error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+.form-input--success,
+.form-select--success,
+.form-textarea--success {
+  border-color: var(--color-success);
+}
+
+/* Helper text */
+.form-helper {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+}
+
+.form-success {
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+}
+
+/* Input with icon */
+.form-input-wrapper {
+  position: relative;
+}
+
+.form-input-wrapper .form-input {
+  padding-left: var(--space-10);
+}
+
+.form-input-icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Form row (multiple inputs side by side) */
+.form-row {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .form-row--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .form-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* Contact form specific */
+.contact-form {
+  background-color: var(--color-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    padding: var(--space-8);
+  }
+}
+
+.contact-form__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+/* ZIP code validator */
+.zip-validator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 480px) {
+  .zip-validator {
+    flex-direction: row;
+  }
+}
+
+.zip-validator .form-input {
+  flex: 1;
+}
+
+.zip-validator__result {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.zip-validator__result--success {
+  background-color: rgba(74, 124, 89, 0.1);
+  color: var(--color-success);
+}
+
+.zip-validator__result--error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--color-error);
+}
+
+/* Form submission states */
+.form--loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.form-message {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.form-message--success {
+  background-color: rgba(74, 124, 89, 0.1);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.form-message--error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}

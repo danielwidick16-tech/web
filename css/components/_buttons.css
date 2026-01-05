@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Buttons - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Base button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn:disabled,
+.btn--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button sizes */
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--font-size-lg);
+}
+
+/* Primary button - Forest Green */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn--primary:active {
+  transform: translateY(1px);
+}
+
+/* Secondary button - Volcanic Brown */
+.btn--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+  border-color: var(--color-secondary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+}
+
+/* Accent button - Volcanic Orange (CTAs) */
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn--accent:active {
+  transform: translateY(0);
+}
+
+/* Outline button */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Outline light (for dark backgrounds) */
+.btn--outline-light {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.btn--outline-light:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* Ghost button */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-gray-100);
+}
+
+/* Link button */
+.btn--link {
+  padding: 0;
+  background-color: transparent;
+  color: var(--color-accent);
+  border: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.btn--link:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+/* Full width button */
+.btn--full {
+  width: 100%;
+}
+
+/* Button with icon */
+.btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn--lg .btn__icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Icon only button */
+.btn--icon {
+  padding: var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.btn--icon.btn--sm {
+  padding: var(--space-2);
+}
+
+.btn--icon.btn--lg {
+  padding: var(--space-4);
+}
+
+/* Call button */
+.btn--call {
+  background-color: var(--color-success);
+  color: var(--color-white);
+  border-color: var(--color-success);
+}
+
+.btn--call:hover {
+  background-color: var(--color-success-dark);
+  border-color: var(--color-success-dark);
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.btn-group--center {
+  justify-content: center;
+}
+
+.btn-group--stacked {
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  .btn-group--stacked {
+    flex-direction: row;
+  }
+}
+
+/* Loading state */
+.btn--loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

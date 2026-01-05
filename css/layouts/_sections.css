@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Sections - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Base section */
+.section {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+
+/* Section sizes */
+.section--sm {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.section--lg {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .section--lg {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}
+
+/* Section backgrounds */
+.section--white {
+  background-color: var(--color-white);
+}
+
+.section--gray {
+  background-color: var(--color-gray-50);
+}
+
+.section--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.section--primary h1,
+.section--primary h2,
+.section--primary h3,
+.section--primary h4 {
+  color: var(--color-white);
+}
+
+.section--primary p {
+  color: var(--color-gray-200);
+}
+
+.section--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+/* Section with background pattern */
+.section--pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/images/backgrounds/topographic-pattern.svg');
+  background-repeat: repeat;
+  background-size: 400px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Section header */
+.section__header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .section__header {
+    margin-bottom: var(--space-12);
+  }
+}
+
+.section__title {
+  margin-bottom: var(--space-4);
+}
+
+.section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Full-width section that breaks out of container */
+.section--full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Section with angled/diagonal edge */
+.section--angled {
+  position: relative;
+  padding-bottom: calc(var(--space-20) + 60px);
+}
+
+.section--angled::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: inherit;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}

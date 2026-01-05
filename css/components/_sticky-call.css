@@ -1,0 +1,187 @@
+/* ==========================================================================
+   Sticky Call Button - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Mobile sticky call button */
+.sticky-call {
+  position: fixed;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-success);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-fixed);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.sticky-call:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.sticky-call:active {
+  transform: translateY(0);
+}
+
+.sticky-call__icon {
+  width: 24px;
+  height: 24px;
+  animation: phone-ring 1s ease-in-out infinite;
+}
+
+@keyframes phone-ring {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  10%, 30% {
+    transform: rotate(-10deg);
+  }
+  20%, 40% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+}
+
+/* Hide on larger screens */
+@media (min-width: 768px) {
+  .sticky-call {
+    display: none;
+  }
+}
+
+/* Compact version (icon only) */
+.sticky-call--compact {
+  left: auto;
+  right: var(--space-4);
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border-radius: var(--radius-full);
+}
+
+.sticky-call--compact .sticky-call__text {
+  display: none;
+}
+
+.sticky-call--compact .sticky-call__icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Alternative floating call button (always visible) */
+.floating-call {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-success);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-fixed);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.floating-call:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-2xl);
+}
+
+.floating-call__icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Pulse animation for attention */
+.floating-call::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-success);
+  border-radius: var(--radius-full);
+  animation: pulse 2s ease-out infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Tooltip on hover */
+.floating-call__tooltip {
+  position: absolute;
+  right: calc(100% + var(--space-3));
+  top: 50%;
+  transform: translateY(-50%);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+}
+
+.floating-call__tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--color-primary);
+}
+
+.floating-call:hover .floating-call__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Desktop only floating button */
+@media (max-width: 767px) {
+  .floating-call {
+    display: none;
+  }
+}
+
+/* Accessibility - reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sticky-call__icon {
+    animation: none;
+  }
+
+  .floating-call::before {
+    animation: none;
+  }
+}

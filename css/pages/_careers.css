@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Careers Page Styles - Volcanic Heating and Air
+   ========================================================================== */
+
+/* Positions grid */
+.careers-positions {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .careers-positions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .careers-positions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Position card */
+.careers-position {
+  background-color: var(--color-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.careers-position:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.careers-position__title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.careers-position__desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-relaxed);
+}
+
+.careers-position__requirements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.careers-position__requirements li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.careers-position__requirements li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
