@@ -1,6 +1,8 @@
 # Dependencies
 node_modules/
-inventory-app/node_modules/
+
+# Inventory app (deployed separately on Vercel)
+inventory-app/
 
 # Build outputs
 .next/
@@ -12,8 +14,6 @@ build/
 .env
 .env.local
 .env.*.local
-inventory-app/.env
-inventory-app/.env.local
 
 # IDE
 .idea/
@@ -33,6 +33,3 @@ npm-debug.log*
 # Claude
 .claude/
 
-# Prisma
-inventory-app/prisma/*.db
-inventory-app/prisma/*.db-journal
